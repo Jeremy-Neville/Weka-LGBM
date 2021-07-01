@@ -95,3 +95,34 @@ As you can see, what is shown below are the results from running the prototype w
 > 9421  290 |    a = normal
 > 4446 8387 |    b = anomaly
 
+
+
+ 
+# CatBoost ProtoType
+What we will now focus on is the original prototype I created for my CatBoost pyscript I utilized to attain my orignal results from the prototype. It is important to note that the code for the prototype will only have a few differences compared to the finished product. It also is important to note that the code for the prototype is very similar to the LGBM prototype code.
+
+## CatBoost ProtoType Code
+As you can see below, the code for the CatBoost Prototype is very similar to the LGBMK Prototype code however as you can see this one as well can't be fully trusted due to it utilizing the default parameters that we are unsure if are good parameters or are the worst parameters to provide the model. Overall this code will be revised upon alongside the LGBM code to fully ensure that the results given are the best results possible.
+```
+from wekapyscript import ArffToArgs
+import lightgbm
+import catboost
+
+def train(args):
+    x_train = args["X_train"]
+    y_train = args["y_train"]
+    rf = catboost.CatBoostClassifier()
+    rf.fit(x_train, y_train)
+    return rf
+
+
+
+def describe(args, model):
+    return "catboost is running"
+
+def test(args, model):
+    X_test = args["X_test"]
+    return model.predict_proba(X_test).tolist()
+```
+
+
