@@ -44,12 +44,19 @@ As you can see, what is shown below are the results from running the prototype w
 >=== Summary ===
 >
 >Correctly Classified Instances      125850               99.9024 %
+
 >Incorrectly Classified Instances       123                0.0976 %
+
 >Kappa statistic                          0.998 
+
 >Mean absolute error                      0.0018
+
 >Root mean squared error                  0.0278
+
 >Relative absolute error                  0.3629 %
+
 >Root relative squared error              5.565  %
+
 >Total Number of Instances           125973     
 >
 >=== Detailed Accuracy By Class ===
@@ -76,10 +83,15 @@ As you can see, what is shown below are the results from running the prototype w
 >=== Summary ===
 >
 >Correctly Classified Instances       17808               78.9922 %
+
 >Incorrectly Classified Instances      4736               21.0078 %
+
 >Kappa statistic                          0.5928
+
 >Mean absolute error                      0.2087
+
 >Root mean squared error                  0.4369
+
 >Total Number of Instances            22544     
 >
 >=== Detailed Accuracy By Class ===
@@ -93,11 +105,11 @@ As you can see, what is shown below are the results from running the prototype w
 >
 >    a    b   <-- classified as
 > 9421  290 |    a = normal
-> 4446 8387 |    b = anomaly
+> 4446 8387 |    b = anomaly 
 
 
 # LGBM Results with different parameters
-For some reason currently I am unable to have the three parameters within my weka for some reason which as of now I am unabke to figure out as to why that is occuring. So just in case I was able to make some modifications on the code provided to make sure it works with each singular parameter.
+For some reason before I was unable to have the three parameters within my weka for some reason which I was unable to figure out until recently as to why that is occuring. So just in case I was able to make some modifications on the code provided to make sure it works with each singular parameter and documented them.
 
 ## 32 leaves results
 >=== Classifier model (full training set) ===
@@ -108,12 +120,19 @@ For some reason currently I am unable to have the three parameters within my wek
 >=== Summary ===
 >
 >Correctly Classified Instances      125857               99.9079 %
+
 >Incorrectly Classified Instances       116                0.0921 %
+
 >Kappa statistic                          0.9981
+
 >Mean absolute error                      0.0017
+
 >Root mean squared error                  0.0274
+
 >Relative absolute error                  0.3509 %
+
 >Root relative squared error              5.4833 %
+
 >Total Number of Instances           125973     
 >
 >=== Detailed Accuracy By Class ===
@@ -279,6 +298,78 @@ For some reason currently I am unable to have the three parameters within my wek
 >    a    b   <-- classified as
 > 9431  280 |    a = normal
 > 4521 8312 |    b = anomaly
+
+
+# The new LGBM ProtoType
+I was able to figure out the small issues that were preventing me from acquiring the results I wanted. What will be doisplayed below will be the results given by the code which had some alteration which will be detailed.
+
+## The alteration made within the code
+The biggest alteration I made when it comes to the code was change the LGBMRegressor statement to an LGBM classifier statement. This alteration was made to ensure I can run it within Weka as a classifier with the default parameters.
+```
+lgbm= lgb.LGBMClassifier(num_leaves = args["num_leaves"], learning_rate = args["learning_rate"], n_estimators = args["n_estimators"])
+```
+
+## The Results from the alteration
+I was able to put the default parameters within Weka, which then led to the following results to be provided by this model. It becomes clear that this alteration within the code allowed the classifer to provide results that were different from when I ran the classifier without any parameters. This doesn;t mean that the results will differ greatly from the ones that have provided the best results however it shows that progress is being made.
+
+>=== Classifier model (full training set) ===
+>LightGBM
+>Time taken to build model: 6.82 seconds
+>
+>=== Stratified cross-validation ===
+>=== Summary ===
+>
+>Correctly Classified Instances      125537               99.6539 %
+>Incorrectly Classified Instances       436                0.3461 %
+>Kappa statistic                          0.993 
+>Mean absolute error                      0.1856
+>Root mean squared error                  0.1892
+>Relative absolute error                 37.3049 %
+>Root relative squared error             37.9377 %
+>Total Number of Instances           125973     
+>
+>=== Detailed Accuracy By Class ===
+>
+>                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+>                 0.998    0.005    0.996      0.998    0.997      0.993    0.999     0.999     normal
+>                 0.995    0.002    0.997      0.995    0.996      0.993    0.999     0.999     anomaly
+>Weighted Avg.    0.997    0.004    0.997      0.997    0.997      0.993    0.999     0.999     
+>
+>=== Confusion Matrix ===
+>
+>     a     b   <-- classified as
+> 67185   158 |     a = normal
+>   278 58352 |     b = anomaly
+>
+>=== Re-evaluation on test set ===
+>
+>User supplied test set
+>Relation:     KDDTest
+>Instances:     unknown (yet). Reading incrementally
+>Attributes:   42
+>
+>=== Summary ===
+>
+>Correctly Classified Instances       17867               79.2539 %
+>Incorrectly Classified Instances      4677               20.7461 %
+>Kappa statistic                          0.5978
+>Mean absolute error                      0.3222
+>Root mean squared error                  0.4067
+>Total Number of Instances            22544     
+>
+>=== Detailed Accuracy By Class ===
+>
+>                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+>                 0.973    0.344    0.682      0.973    0.802      0.640    0.906     0.828     normal
+>                 0.656    0.027    0.969      0.656    0.783      0.640    0.906     0.918     anomaly
+>Weighted Avg.    0.793    0.164    0.845      0.793    0.791      0.640    0.906     0.879     
+>
+>=== Confusion Matrix ===
+>
+>    a    b   <-- classified as
+> 9445  266 |    a = normal
+> 4411 8422 |    b = anomaly
+
 
 
 
