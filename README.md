@@ -351,7 +351,7 @@ I was able to figure out the small issues that were preventing me from acquiring
 ## The Alteration Made Within The Code
 The biggest alteration I made when it comes to the code was to change the LGBMRegressor statement to an LGBM classifier statement. This alteration was made to ensure I can run it within Weka as a classifier with the default parameters.
 ```
-lgbm= lgb.LGBMClassifier(num_leaves = args["num_leaves"], learning_rate = args["learning_rate"], n_estimators = args["n_estimators"])
+rf= lightgbm.LGBMClassifier(num_leaves = args["num_leaves"], learning_rate = args["learning_rate"], n_estimators = args["n_estimators"])
 ```
 
 ## The Results From The Alteration
@@ -555,7 +555,7 @@ As displayed below, the only change made within the code was the additional para
     # num_leaves (default 31)
     # learning_rate (default 0.03)
     # n_estimators (I utilized 1000)
-catboost.CatBoostClassifier(num_leaves = args["num_leaves"], learning_rate = args["learning_rate"], n_estimators = args["n_estimators"])
+rf = catboost.CatBoostClassifier(num_leaves = args["num_leaves"], learning_rate = args["learning_rate"], n_estimators = args["n_estimators"])
 ```
 ## The parameters I utilized within Weka
 Within weka, I placed the following values as the arguments that would be passed when I ran my newly revised CatBoost Pyscript ProtoType. I began searching as to what values will be accepted as default parameters to be utilized when running the pyscript.
