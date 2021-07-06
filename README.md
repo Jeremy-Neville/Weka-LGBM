@@ -6,7 +6,9 @@ Within here you will see a documentation of my progress in implementing LGBM and
 
 # Arguments/Parameters within Weka
 To ensure the pyscript with parameters works, you need to ensure that within Wkea and where it says arguments you include the parameters with the specefic values you desire
+
 EX:
+
 ```
 #The following line is how you would need to input the values within the arguments textbox within Weka, to esnure that the pyscript with num_leaves,learning_rate, and n_estimators can run without error.
 
