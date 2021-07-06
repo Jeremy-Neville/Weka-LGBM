@@ -31,15 +31,15 @@ def test(args, model):
 ```
 
 
-## LGBM ProtoType results
+## LGBM ProtoType Results
 As you can see, what is shown below are the results from running the prototype with a 10 fold corss validation.These results however are not final due to the fact I am far from fully understanding how to acquire the best results utilizing parameters and utilizing said parameters in Weka, especially if there are more than one parameter.
 
 > === Classifier model (full training set) ===
 >
 >lighgbm is running
->
+
 >Time taken to build model: 13.75 seconds
->
+
 >=== Stratified cross-validation ===
 >=== Summary ===
 >
@@ -58,7 +58,7 @@ As you can see, what is shown below are the results from running the prototype w
 >Root relative squared error              5.565  %
 
 >Total Number of Instances           125973     
->
+
 >=== Detailed Accuracy By Class ===
 >
 >                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
@@ -76,10 +76,12 @@ As you can see, what is shown below are the results from running the prototype w
 >=== Re-evaluation on test set ===
 >
 >User supplied test set
+
 >Relation:     KDDTest
+
 >Instances:     unknown (yet). Reading incrementally
+
 >Attributes:   42
->
 >=== Summary ===
 >
 >Correctly Classified Instances       17808               78.9922 %
@@ -108,13 +110,15 @@ As you can see, what is shown below are the results from running the prototype w
 > 4446 8387 |    b = anomaly 
 
 
-# LGBM Results with different parameters
+# LGBM Results With Different Parameters
 For some reason before I was unable to have the three parameters within my weka for some reason which I was unable to figure out until recently as to why that is occuring. So just in case I was able to make some modifications on the code provided to make sure it works with each singular parameter and documented them.
 
-## 32 leaves results
+## 32 Leaves Results
 >=== Classifier model (full training set) ===
 >LightGBM
+
 >Time taken to build model: 5.51 seconds
+
 >
 >=== Stratified cross-validation ===
 >=== Summary ===
@@ -134,7 +138,7 @@ For some reason before I was unable to have the three parameters within my weka 
 >Root relative squared error              5.4833 %
 
 >Total Number of Instances           125973     
->
+
 >=== Detailed Accuracy By Class ===
 >
 >                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
@@ -151,50 +155,66 @@ For some reason before I was unable to have the three parameters within my weka 
 >=== Re-evaluation on test set ===
 >
 >User supplied test set
+
 >Relation:     KDDTest
+
 >Instances:     unknown (yet). Reading incrementally
+
 >Attributes:   42
->
+
 >=== Summary ===
->
+
 >Correctly Classified Instances       17694               78.4865 %
+
 >Incorrectly Classified Instances      4850               21.5135 %
+
 >Kappa statistic                          0.5836
+
 >Mean absolute error                      0.2113
+
 >Root mean squared error                  0.4407
->Total Number of Instances            22544     
->
+
+>Total Number of Instances            22544   
+  
 >=== Detailed Accuracy By Class ===
 >
 >                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
 >                 0.971    0.356    0.674      0.971    0.795      0.628    0.967     0.964     normal
 >                 0.644    0.029    0.967      0.644    0.773      0.628    0.967     0.972     anomaly
 >Weighted Avg.    0.785    0.170    0.841      0.785    0.783      0.628    0.967     0.969     
->
+
 >=== Confusion Matrix ===
->
+
 >    a    b   <-- classified as
 > 9427  284 |    a = normal
 > 4566 8267 |    b = anomaly
 
 
-## learning_rate=0.05 results
+## Learning_Rate=0.05 Results
 >=== Classifier model (full training set) ===
 >LightGBM
+
 >Time taken to build model: 6.35 seconds
->
+
 >=== Stratified cross-validation ===
 >=== Summary ===
 >
 >Correctly Classified Instances      125765               99.8349 %
+
 >Incorrectly Classified Instances       208                0.1651 %
+
 >Kappa statistic                          0.9967
+
 >Mean absolute error                      0.0072
+
 >Root mean squared error                  0.0366
+
 >Relative absolute error                  1.4443 %
+
 >Root relative squared error              7.3402 %
+
 >Total Number of Instances           125973     
->
+
 >=== Detailed Accuracy By Class ===
 >
 >                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
@@ -212,19 +232,27 @@ For some reason before I was unable to have the three parameters within my weka 
 >=== Re-evaluation on test set ===
 >
 >User supplied test set
+
 >Relation:     KDDTest
+
 >Instances:     unknown (yet). Reading incrementally
+
 >Attributes:   42
->
+
 >=== Summary ===
 >
 >Correctly Classified Instances       17563               77.9054 %
+
 >Incorrectly Classified Instances      4981               22.0946 %
+
 >Kappa statistic                          0.5731
+
 >Mean absolute error                      0.2084
+
 >Root mean squared error                  0.4254
->Total Number of Instances            22544     
->
+
+>Total Number of Instances            22544
+
 >=== Detailed Accuracy By Class ===
 >
 >                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
@@ -240,23 +268,32 @@ For some reason before I was unable to have the three parameters within my weka 
 
 
 
-## n_estimators=20 results
+## n_estimators=20 Results
 >=== Classifier model (full training set) ===
 >LightGBM
+
 >Time taken to build model: 10.01 seconds
->
+
 >=== Stratified cross-validation ===
+
 >=== Summary ===
->
+
 >Correctly Classified Instances      125605               99.7079 %
+
 >Incorrectly Classified Instances       368                0.2921 %
+
 >Kappa statistic                          0.9941
+
 >Mean absolute error                      0.0709
+
 >Root mean squared error                  0.0831
+
 >Relative absolute error                 14.2462 %
+
 >Root relative squared error             16.6569 %
+
 >Total Number of Instances           125973     
->
+
 >=== Detailed Accuracy By Class ===
 >
 >                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
@@ -273,19 +310,27 @@ For some reason before I was unable to have the three parameters within my weka 
 >=== Re-evaluation on test set ===
 >
 >User supplied test set
+
 >Relation:     KDDTest
+
 >Instances:     unknown (yet). Reading incrementally
+
 >Attributes:   42
->
+
 >=== Summary ===
 >
 >Correctly Classified Instances       17743               78.7039 %
+
 >Incorrectly Classified Instances      4801               21.2961 %
+
 >Kappa statistic                          0.5877
+
 >Mean absolute error                      0.2549
+
 >Root mean squared error                  0.4193
+
 >Total Number of Instances            22544     
->
+
 >=== Detailed Accuracy By Class ===
 >
 >                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
@@ -300,34 +345,43 @@ For some reason before I was unable to have the three parameters within my weka 
 > 4521 8312 |    b = anomaly
 
 
-# The new LGBM ProtoType
+# The New LGBM ProtoType
 I was able to figure out the small issues that were preventing me from acquiring the results I wanted. What will be doisplayed below will be the results given by the code which had some alteration which will be detailed.
 
-## The alteration made within the code
+## The Alteration Made Within The Code
 The biggest alteration I made when it comes to the code was change the LGBMRegressor statement to an LGBM classifier statement. This alteration was made to ensure I can run it within Weka as a classifier with the default parameters.
 ```
 lgbm= lgb.LGBMClassifier(num_leaves = args["num_leaves"], learning_rate = args["learning_rate"], n_estimators = args["n_estimators"])
 ```
 
-## The Results from the alteration
+## The Results From The Alteration
 I was able to put the default parameters within Weka, which then led to the following results to be provided by this model. It becomes clear that this alteration within the code allowed the classifer to provide results that were different from when I ran the classifier without any parameters. This doesn;t mean that the results will differ greatly from the ones that have provided the best results however it shows that progress is being made.
 
 >=== Classifier model (full training set) ===
 >LightGBM
+
 >Time taken to build model: 6.82 seconds
->
+
 >=== Stratified cross-validation ===
+
 >=== Summary ===
->
+
 >Correctly Classified Instances      125537               99.6539 %
+
 >Incorrectly Classified Instances       436                0.3461 %
+
 >Kappa statistic                          0.993 
+
 >Mean absolute error                      0.1856
+
 >Root mean squared error                  0.1892
+
 >Relative absolute error                 37.3049 %
+
 >Root relative squared error             37.9377 %
->Total Number of Instances           125973     
->
+
+>Total Number of Instances           125973 
+    
 >=== Detailed Accuracy By Class ===
 >
 >                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
@@ -344,19 +398,28 @@ I was able to put the default parameters within Weka, which then led to the foll
 >=== Re-evaluation on test set ===
 >
 >User supplied test set
+
 >Relation:     KDDTest
+
 >Instances:     unknown (yet). Reading incrementally
+
 >Attributes:   42
->
+
 >=== Summary ===
+
 >
 >Correctly Classified Instances       17867               79.2539 %
+
 >Incorrectly Classified Instances      4677               20.7461 %
+
 >Kappa statistic                          0.5978
+
 >Mean absolute error                      0.3222
+
 >Root mean squared error                  0.4067
->Total Number of Instances            22544     
->
+
+>Total Number of Instances            22544 
+    
 >=== Detailed Accuracy By Class ===
 >
 >                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
@@ -406,11 +469,15 @@ As shown below, the results below are somewhat similar to those of the LGBM prot
 >=== Classifier model (full training set) ===
 >
 >catboost is running
+
 >
 >Time taken to build model: 211.83 seconds
+
 >
 >=== Stratified cross-validation ===
+
 >=== Summary ===
+
 >
 >Correctly Classified Instances      125766               99.8357 %
 >Incorrectly Classified Instances       207                0.1643 %
@@ -437,18 +504,27 @@ As shown below, the results below are somewhat similar to those of the LGBM prot
 >=== Re-evaluation on test set ===
 >
 >User supplied test set
+
 >Relation:     KDDTest
+
 >Instances:     unknown (yet). Reading incrementally
+
 >Attributes:   42
->
+
 >=== Summary ===
 >
 >Correctly Classified Instances       17965               79.6886 %
+
 >Incorrectly Classified Instances      4579               20.3114 %
+
 >Kappa statistic                          0.6056
+
 >Mean absolute error                      0.1991
+
 >Root mean squared error                  0.4163
->Total Number of Instances            22544     
+
+>Total Number of Instances            22544  
+   
 >
 >=== Detailed Accuracy By Class ===
 >
