@@ -3,6 +3,16 @@
 ## Introduction
 Within here you will see a documentation of my progress in implementing LGBM and CatBoost within Weka through PyScript. You will see the differences between the prototype and the finished product.
 
+
+# Arguments/Parameters within Weka
+To ensure the pyscript with parameters works, you need to ensure that within Wkea and where it says arguments you include the parameters with the specefic values you desire
+EX:
+```
+#The following line is how you would need to input the values within the arguments textbox within Weka, to esnure that the pyscript with num_leaves,learning_rate, and n_estimators can run without error.
+
+num_leaves=32;learning_rate=0.05;n_estimators=20
+```
+
 # LGBM ProtoType
 What we will now focus on is the original prototype I created for my LGBM pyscript I utilized to attain my orignal results from the prototype. It is important to note that the code for the prototype will only have a few differences compared to the finished product. 
 
