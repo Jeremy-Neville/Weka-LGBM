@@ -32,7 +32,7 @@ def test(args, model):
 
 
 ## LGBM ProtoType Results
-As you can see, what is shown below are the results from running the prototype with a 10 fold corss validation.These results however are not final due to the fact I am far from fully understanding how to acquire the best results utilizing parameters and utilizing said parameters in Weka, especially if there are more than one parameter.
+As you can see, what is shown below are the results from running the prototype with a 10 fold cross validation. These results however are not final due to the fact I am far from fully understanding how to acquire the best results utilizing parameters and utilizing said parameters in Weka, especially if there is more than one parameter.
 
 > === Classifier model (full training set) ===
 
@@ -112,7 +112,7 @@ As you can see, what is shown below are the results from running the prototype w
 
 
 # LGBM Results With Different Parameters
-For some reason before I was unable to have the three parameters within my weka for some reason which I was unable to figure out until recently as to why that is occuring. So just in case I was able to make some modifications on the code provided to make sure it works with each singular parameter and documented them.
+For some reason before I was unable to have the three parameters within my weka for some reason which I was unable to figure out until recently as to why that is occurring. So just in case, I was able to make some modifications to the code provided to make sure it works with each singular parameter and documented them.
 
 ## 32 Leaves Results
 >=== Classifier model (full training set) ===
@@ -346,16 +346,16 @@ For some reason before I was unable to have the three parameters within my weka 
 
 
 # The New LGBM ProtoType
-I was able to figure out the small issues that were preventing me from acquiring the results I wanted. What will be doisplayed below will be the results given by the code which had some alteration which will be detailed.
+I was able to figure out the small issues that were preventing me from acquiring the results I wanted. What will be displayed below will be the results given by the code which had some alteration which will be detailed.
 
 ## The Alteration Made Within The Code
-The biggest alteration I made when it comes to the code was change the LGBMRegressor statement to an LGBM classifier statement. This alteration was made to ensure I can run it within Weka as a classifier with the default parameters.
+The biggest alteration I made when it comes to the code was to change the LGBMRegressor statement to an LGBM classifier statement. This alteration was made to ensure I can run it within Weka as a classifier with the default parameters.
 ```
 lgbm= lgb.LGBMClassifier(num_leaves = args["num_leaves"], learning_rate = args["learning_rate"], n_estimators = args["n_estimators"])
 ```
 
 ## The Results From The Alteration
-I was able to put the default parameters within Weka, which then led to the following results to be provided by this model. It becomes clear that this alteration within the code allowed the classifer to provide results that were different from when I ran the classifier without any parameters. This doesn;t mean that the results will differ greatly from the ones that have provided the best results however it shows that progress is being made.
+I was able to put the default parameters within Weka, which then led to the following results to be provided by this model. It becomes clear that this alteration within the code allowed the classifier to provide results that were different from when I ran the classifier without any parameters. This doesn't mean that the results will differ greatly from the ones that have provided the best results however it shows that progress is being made.
 
 >=== Classifier model (full training set) ===
 >LightGBM
@@ -438,7 +438,7 @@ I was able to put the default parameters within Weka, which then led to the foll
 
  
 # CatBoost ProtoType
-What we will now focus on is the original prototype I created for my CatBoost pyscript I utilized to attain my orignal results from the prototype. It is important to note that the code for the prototype will only have a few differences compared to the finished product. It also is important to note that the code for the prototype is very similar to the LGBM prototype code.
+What we will now focus on is the original prototype I created for the CatBoost pyscript I utilized to attain my original results from the prototype. It is important to note that the code for the prototype will only have a few differences compared to the finished product. It also is important to note that the code for the prototype is very similar to the LGBM prototype code.
 
 ## CatBoost ProtoType Code
 As you can see below, the code for the CatBoost Prototype is very similar to the LGBMK Prototype code however as you can see this one as well can't be fully trusted due to it utilizing the default parameters that we are unsure if are good parameters or are the worst parameters to provide the model. Overall this code will be revised upon alongside the LGBM code to fully ensure that the results given are the best results possible.
@@ -465,7 +465,7 @@ def test(args, model):
 ```
 
 ## CatBoost ProtoType Results
-As shown below, the results below are somewhat similar to those of the LGBM prototype. However as stated before this result is not the final result due to the fact that we haven't applied enough parameters to safely state that our results are the best results given by CatBoost.
+As shown below, the results below are somewhat similar to those of the LGBM prototype. However, as stated before this result is not the final result due to the fact that we haven't applied enough parameters to safely state that our results are the best results given by CatBoost.
 >=== Classifier model (full training set) ===
 
 >catboost is running
@@ -546,10 +546,10 @@ As shown below, the results below are somewhat similar to those of the LGBM prot
     4294 8539 |    b = anomaly
 
 # The New CatBoost Prototype
-Since I was able to figure out to effictively create the prototype for LGBM, I began working on updating the prototype for CatBoost. This led to me to create an updated pyscript which was able to provide me some results that would be deemed benificial in ensuring that we can provide specefic parameters that can provide us better results.
+Since I was able to figure out to effectively create the prototype for LGBM, I began working on updating the prototype for CatBoost. This led to me to create an updated pyscript which was able to provide me some results that would be deemed beneficial in ensuring that we can provide specific parameters that can provide us better results.
 
 ## The update within the CatBoost PyScript
-As displayed below, the only change made within the code was the additional parameters that were included within the declaration of the CatBoost Classifier. I also commented in the parameters I utilized within Weka  as to what to provide a better idea as to what each parameter within the code was given when I was placing in values for each parameter within weka.
+As displayed below, the only change made within the code was the additional parameters that were included within the declaration of the CatBoost Classifier. I also commented in the parameters I utilized within Weka as to what to provide a better idea as to what each parameter within the code was given when I was placing in values for each parameter within weka.
 ```
 # Parameters for Weka:
     # num_leaves (default 31)
@@ -558,7 +558,7 @@ As displayed below, the only change made within the code was the additional para
 catboost.CatBoostClassifier(num_leaves = args["num_leaves"], learning_rate = args["learning_rate"], n_estimators = args["n_estimators"])
 ```
 ## The parameters I utilized within Weka
-Within weka, I placed the following values as the arguments that would be passed when I ran my newly revised CatBoost Pyscript ProtoType. I began searching as to what values will be acceptable as default parameters to be utilized when running the pyscript.
+Within weka, I placed the following values as the arguments that would be passed when I ran my newly revised CatBoost Pyscript ProtoType. I began searching as to what values will be accepted as default parameters to be utilized when running the pyscript.
 
 ```
 num_leaves=31;learning_rate=0.03;n_estimators=1000
