@@ -280,10 +280,11 @@ def test(args, model):
 ## Running the CatBoost ProtoType
 ![CATBOOSTPROTO](https://user-images.githubusercontent.com/49813790/124769222-4b898180-df07-11eb-8a59-d96649cf4634.PNG)
 
-As reiterated before, the CatBoost prototype allows you to run CatBoost without any arguments. So to run it whtin Weka all you need to do is have the same screen as the once shown above since you are not providing any arguments to the model.
+As reiterated before, the CatBoost prototype allows you to run CatBoost without any arguments. So to run it within Weka all you need to do is have the same screen as the once shown above since you are not providing any arguments to the model.
 
 ## CatBoost ProtoType Results
 As shown below, the results below are somewhat similar to those of the LGBM prototype. However, as stated before this result is not the final result due to the fact that we haven't applied enough parameters to safely state that our results are the best results given by CatBoost.
+
 >=== Classifier model (full training set) ===
 
 >catboost is running
