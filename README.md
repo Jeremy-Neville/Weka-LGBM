@@ -5,12 +5,12 @@ Within here you will see a documentation of my progress in implementing LGBM and
 
 
 # Arguments/Parameters within Weka
-To ensure the pyscript with parameters works, you need to ensure that within Wkea and where it says arguments you include the parameters with the specefic values you desire
+To ensure the pyscript with parameters works, you need to ensure that within Wkea and where it says arguments you include the parameters with the specefic values you desire. This will be reiterated within each prototype and final version of the PyScript for CatBoost and LGBM.
 
 EX:
 
 ```
-#The following line is how you would need to input the values within the arguments textbox within Weka, to esnure that the pyscript with num_leaves,learning_rate, and n_estimators can run without error.
+#The following line is how you would need to input the values within the arguments textbox within Weka, to ensure that the pyscript with num_leaves,learning_rate, and n_estimators can run without error.
 
 num_leaves=32;learning_rate=0.05;n_estimators=20
 ```
@@ -53,6 +53,13 @@ def test(args, model):
     return model.predict_proba(X_test).tolist()
 
 ```
+
+## Running the lGBM Prototype
+![LGBMPROTO](https://user-images.githubusercontent.com/49813790/124766522-019f9c00-df05-11eb-87c3-10b98d736c36.PNG)
+
+
+As shown above, since you are not utilizing any parameters / Arguments, you do not need to do anything except indicate to Weka that the pyscript you want to utilize is the LGBM Prototype PyScript.
+
 
 ## LGBM ProtoType Results
 As you can see, what is shown below are the results from running the prototype with a 10 fold cross validation. These results however are not final due to the fact I am far from fully understanding how to acquire the best results utilizing parameters and utilizing said parameters in Weka, especially if there is more than one parameter.
@@ -133,239 +140,6 @@ As you can see, what is shown below are the results from running the prototype w
     9421  290 |    a = normal
     4446 8387 |    b = anomaly 
 
-
-# LGBM Results With Different Parameters
-For some reason before I was unable to have the three parameters within my weka for some reason which I was unable to figure out until recently as to why that is occurring. So just in case, I was able to make some modifications to the code provided to make sure it works with each singular parameter and documented them.
-
-## 32 Leaves Results
->=== Classifier model (full training set) ===
->LightGBM
-
->Time taken to build model: 5.51 seconds
-
-
->=== Stratified cross-validation ===
->=== Summary ===
-
->Correctly Classified Instances      125857               99.9079 %
-
->Incorrectly Classified Instances       116                0.0921 %
-
->Kappa statistic                          0.9981
-
->Mean absolute error                      0.0017
-
->Root mean squared error                  0.0274
-
->Relative absolute error                  0.3509 %
-
->Root relative squared error              5.4833 %
-
->Total Number of Instances           125973     
-
->=== Detailed Accuracy By Class ===
-
-                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0.999    0.001    0.999      0.999    0.999      0.998    1.000     1.000     normal
-                 0.999    0.001    0.999      0.999    0.999      0.998    1.000     1.000     anomaly
-    Weighted Avg.    0.999    0.001    0.999      0.999    0.999      0.998    1.000     1.000     
-
->=== Confusion Matrix ===
-
-     a     b   <-- classified as
-    67297    46 |     a = normal
-    70 58560 |     b = anomaly
-
->=== Re-evaluation on test set ===
-
->User supplied test set
-
->Relation:     KDDTest
-
->Instances:     unknown (yet). Reading incrementally
-
->Attributes:   42
-
->=== Summary ===
-
->Correctly Classified Instances       17694               78.4865 %
-
->Incorrectly Classified Instances      4850               21.5135 %
-
->Kappa statistic                          0.5836
-
->Mean absolute error                      0.2113
-
->Root mean squared error                  0.4407
-
->Total Number of Instances            22544   
-  
->=== Detailed Accuracy By Class ===
-
-                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0.971    0.356    0.674      0.971    0.795      0.628    0.967     0.964     normal
-                 0.644    0.029    0.967      0.644    0.773      0.628    0.967     0.972     anomaly
-    Weighted Avg.    0.785    0.170    0.841      0.785    0.783      0.628    0.967     0.969     
-
->=== Confusion Matrix ===
-
-    a    b   <-- classified as
-    9427  284 |    a = normal
-    4566 8267 |    b = anomaly
-
-
-## Learning_Rate=0.05 Results
->=== Classifier model (full training set) ===
->LightGBM
-
->Time taken to build model: 6.35 seconds
-
->=== Stratified cross-validation ===
->=== Summary ===
-
->Correctly Classified Instances      125765               99.8349 %
-
->Incorrectly Classified Instances       208                0.1651 %
-
->Kappa statistic                          0.9967
-
->Mean absolute error                      0.0072
-
->Root mean squared error                  0.0366
-
->Relative absolute error                  1.4443 %
-
->Root relative squared error              7.3402 %
-
->Total Number of Instances           125973     
-
->=== Detailed Accuracy By Class ===
-
-                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0.999    0.002    0.998      0.999    0.998      0.997    1.000     1.000     normal
-                 0.998    0.001    0.999      0.998    0.998      0.997    1.000     1.000     anomaly
-    Weighted Avg.    0.998    0.002    0.998      0.998    0.998      0.997    1.000     1.000     
-
->=== Confusion Matrix ===
-
-     a     b   <-- classified as
-    67261    82 |     a = normal
-    126 58504 |     b = anomaly
-
->=== Re-evaluation on test set ===
-
->User supplied test set
-
->Relation:     KDDTest
-
->Instances:     unknown (yet). Reading incrementally
-
->Attributes:   42
-
->=== Summary ===
-
->Correctly Classified Instances       17563               77.9054 %
-
->Incorrectly Classified Instances      4981               22.0946 %
-
->Kappa statistic                          0.5731
-
->Mean absolute error                      0.2084
-
->Root mean squared error                  0.4254
-
->Total Number of Instances            22544
-
->=== Detailed Accuracy By Class ===
-
-                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0.971    0.366    0.667      0.971    0.791      0.619    0.961     0.958     normal
-                 0.634    0.029    0.966      0.634    0.766      0.619    0.961     0.961     anomaly
-    Weighted Avg.    0.779    0.174    0.838      0.779    0.777      0.619    0.961     0.960     
-
->=== Confusion Matrix ===
-
-    a    b   <-- classified as
-    9427  284 |    a = normal
-    4697 8136 |    b = anomaly
-
-
-
-## n_estimators=20 Results
->=== Classifier model (full training set) ===
->LightGBM
-
->Time taken to build model: 10.01 seconds
-
->=== Stratified cross-validation ===
-
->=== Summary ===
-
->Correctly Classified Instances      125605               99.7079 %
-
->Incorrectly Classified Instances       368                0.2921 %
-
->Kappa statistic                          0.9941
-
->Mean absolute error                      0.0709
-
->Root mean squared error                  0.0831
-
->Relative absolute error                 14.2462 %
-
->Root relative squared error             16.6569 %
-
->Total Number of Instances           125973     
-
->=== Detailed Accuracy By Class ===
-
-                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0.998    0.004    0.997      0.998    0.997      0.994    0.999     0.999     normal
-                 0.996    0.002    0.997      0.996    0.997      0.994    0.999     0.999     anomaly
-    Weighted Avg.    0.997    0.003    0.997      0.997    0.997      0.994    0.999     0.999     
-
->=== Confusion Matrix ===
->
->     a     b   <-- classified as
-> 67190   153 |     a = normal
->   215 58415 |     b = anomaly
->
->=== Re-evaluation on test set ===
->
->User supplied test set
-
->Relation:     KDDTest
-
->Instances:     unknown (yet). Reading incrementally
-
->Attributes:   42
-
->=== Summary ===
-
->Correctly Classified Instances       17743               78.7039 %
-
->Incorrectly Classified Instances      4801               21.2961 %
-
->Kappa statistic                          0.5877
-
->Mean absolute error                      0.2549
-
->Root mean squared error                  0.4193
-
->Total Number of Instances            22544     
-
->=== Detailed Accuracy By Class ===
-
-                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0.971    0.352    0.676      0.971    0.797      0.631    0.910     0.831     normal
-                 0.648    0.029    0.967      0.648    0.776      0.631    0.910     0.921     anomaly
->Weighted Avg.    0.787    0.168    0.842      0.787    0.785      0.631    0.910     0.882     
-
->=== Confusion Matrix ===
-
-    a    b   <-- classified as
-    9431  280 |    a = normal
-    4521 8312 |    b = anomaly
 
 
 # The New LGBM ProtoType
@@ -501,6 +275,12 @@ def test(args, model):
     X_test = args["X_test"]
     return model.predict_proba(X_test).tolist()
 ```
+
+
+## Running the CatBoost ProtoType
+![CATBOOSTPROTO](https://user-images.githubusercontent.com/49813790/124769222-4b898180-df07-11eb-8a59-d96649cf4634.PNG)
+
+As reiterated before, the CatBoost prototype allows you to run CatBoost without any arguments. So to run it whtin Weka all you need to do is have the same screen as the once shown above since you are not providing any arguments to the model.
 
 ## CatBoost ProtoType Results
 As shown below, the results below are somewhat similar to those of the LGBM prototype. However, as stated before this result is not the final result due to the fact that we haven't applied enough parameters to safely state that our results are the best results given by CatBoost.
