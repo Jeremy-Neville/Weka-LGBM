@@ -23,27 +23,36 @@ What we will now focus on is the original prototype I created for my LGBM pyscri
 ## LGBM ProtoType Code
 The code below is the code utilized for the prototype. As you can see, the LGBMClassifier does not utilize any parameters and is instead relying upon what can be inferred to be default parameters. What we are currently unsure of is if these default parameters are good parameters or are insufficient in allowing us to acquire a good understanding of how effective LGBM is with this data set.
 ```
-#I keep the two statements that were imported in the RandomForest Classifier pyscript just in case
-from wekapyscript import ArffToArgs
-import lightgbm
+# Weka LightGBM ProtoType
+# An implementation of LightGBM in Weka, using Weka PyScript
+# For Capitol Technology University's Computer Science Lab
 
+# 7/7/2021: COMPLETE, TESTED
+
+#This is the prototype code that you can utilize to simply run LGBM without any parameters given by you the user
+from wekapyscript import ArffToArgs
+import lightgbm as lgb
+
+# Train the model
 def train(args):
     x_train = args["X_train"]
     y_train = args["y_train"]
-    rf = lightgbm.LGBMClassifier()
-    rf = rf.fit(x_train, y_train)
-    return rf
+    lgbm = lgb.LGBMClassifier()
+    lgbm = lgbm.fit(x_train, y_train)
+    return lgbm
 
-
+# Model description
+# TODO: Add args to return string
 def describe(args, model):
-    return "lighgbm is running"
+    return "LightGBM is running"
 
-
+# Test the model
+# TODO: Test in Weka
 def test(args, model):
     X_test = args["X_test"]
     return model.predict_proba(X_test).tolist()
-```
 
+```
 
 ## LGBM ProtoType Results
 As you can see, what is shown below are the results from running the prototype with a 10 fold cross validation. These results however are not final due to the fact I am far from fully understanding how to acquire the best results utilizing parameters and utilizing said parameters in Weka, especially if there is more than one parameter.
@@ -363,12 +372,12 @@ For some reason before I was unable to have the three parameters within my weka 
 I was able to figure out the small issues that were preventing me from acquiring the results I wanted. What will be displayed below will be the results given by the code which had some alteration which will be detailed.
 
 ## The Alteration Made Within The Code, and how to apply it within your prototype code
-The biggest alteration I made when it comes to the code was to change the LGBMRegressor statement to an LGBM classifier statement. This alteration was made to ensure I can run it within Weka as a classifier with the default parameters. All you need to do within your prototype code is replace the previoud declaration of rf with the following line of code.
+The biggest alteration I made when it comes to the code was to change the LGBMRegressor statement to an LGBM classifier statement. This alteration was made to ensure I can run it within Weka as a classifier with the default parameters. All you need to do within your prototype code is replace the previous declaration of lgbm with the following line of code.
 ```
-rf= lightgbm.LGBMClassifier(num_leaves = args["num_leaves"], learning_rate = args["learning_rate"], n_estimators = args["n_estimators"])
+lgbm= lgb.LGBMClassifier(num_leaves = args["num_leaves"], learning_rate = args["learning_rate"], n_estimators = args["n_estimators"])
 ```
 
-## Running The LightGBM PyScript within Weka
+## Running The LightGBM PyScript Within Weka With Arguments
 ![arguments](https://user-images.githubusercontent.com/49813790/124758556-af5a7d00-defc-11eb-89d0-b7033177cc8a.PNG)
 
 To ensure that the pyscript is ran without issue it is important that num_leaves=32, learning_rate=0.05 and n_estimators=20. These are the default parameters you should apply when first running this pyscript within weka to ensure the pyscript runs without any issues.
@@ -463,22 +472,31 @@ What we will now focus on is the original prototype I created for the CatBoost p
 ## CatBoost ProtoType Code
 As you can see below, the code for the CatBoost Prototype is very similar to the LGBMK Prototype code however as you can see this one as well can't be fully trusted due to it utilizing the default parameters that we are unsure if are good parameters or are the worst parameters to provide the model. Overall this code will be revised upon alongside the LGBM code to fully ensure that the results given are the best results possible.
 ```
+# Weka CatBoost ProtoType
+# An implementation of CatBoost in Weka, using Weka PyScript
+# For Capitol Technology University's Computer Science Lab
+
+# 7/7/2021: COMPLETE, TESTED
+
+#This is the prototype code that can be utilized to run CatBoost within Weka witout any parameters being provided into the arguments section within Weka.
 from wekapyscript import ArffToArgs
-import lightgbm
 import catboost
 
+# Train the model
 def train(args):
     x_train = args["X_train"]
     y_train = args["y_train"]
-    rf = catboost.CatBoostClassifier()
-    rf.fit(x_train, y_train)
-    return rf
+    CB = catboost.CatBoostClassifier()
+    CB.fit(x_train, y_train)
+    return CB
 
-
-
+# Model description
+# TODO: Add args to return string
 def describe(args, model):
     return "catboost is running"
 
+# Test the model
+# TODO: Test in Weka
 def test(args, model):
     X_test = args["X_test"]
     return model.predict_proba(X_test).tolist()
@@ -569,13 +587,9 @@ As shown below, the results below are somewhat similar to those of the LGBM prot
 Since I was able to figure out to effectively create the prototype for LGBM, I began working on updating the prototype for CatBoost. This led to me to create an updated pyscript which was able to provide me some results that would be deemed beneficial in ensuring that we can provide specific parameters that can provide us better results.
 
 ## The update within the CatBoost PyScript
-As displayed below, the only change made within the code was the additional parameters that were included within the declaration of the CatBoost Classifier. Utiliing the CatBoost prototype code provided, the only change you need to do is replace your previous declaration of rf to the one displayed in the line of code below.
+As displayed below, the only change made within the code was the additional parameters that were included within the declaration of the CatBoost Classifier. Utiliing the CatBoost prototype code provided, the only change you need to do is replace your previous declaration of CB to the one displayed in the line of code below.
 ```
-# Parameters for Weka:
-    # num_leaves (default 31)
-    # learning_rate (default 0.03)
-    # n_estimators (I utilized 1000)
-rf = catboost.CatBoostClassifier(num_leaves = args["num_leaves"], learning_rate = args["learning_rate"], n_estimators = args["n_estimators"])
+CB = catboost.CatBoostClassifier(num_leaves = args["num_leaves"], learning_rate = args["learning_rate"], n_estimators = args["n_estimators"])
 ```
 ## The parameters I utilized within Weka for CatBoost
 Within weka, I placed the following values as the arguments that would be passed when I ran my newly revised CatBoost Pyscript ProtoType. I began searching as to what values will be accepted as default parameters to be utilized when running the pyscript.
