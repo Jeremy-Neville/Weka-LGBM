@@ -4,7 +4,6 @@
     # n_estimators (I utilized 1000)
   
 from wekapyscript import ArffToArgs
-import lightgbm
 import catboost
 
 def train(args):
