@@ -1,14 +1,19 @@
-#I keep the two statements that were imported in the RandomForest Classifier pyscript just in case
+# Weka CatBoost
+# An implementation of CatBoost in Weka, using Weka PyScript
+# For Capitol Technology University's Computer Science Lab
+
+# 7/7/2021: COMPLETE, TESTED
+
+#This is the prototype code that can be utilized to run CatBoost within Weka witout any parameters being provided into the arguments section within Weka.
 from wekapyscript import ArffToArgs
-import lightgbm
 import catboost
 
 def train(args):
     x_train = args["X_train"]
     y_train = args["y_train"]
-    rf = catboost.CatBoostClassifier()
-    rf.fit(x_train, y_train)
-    return rf
+    CB = catboost.CatBoostClassifier()
+    CB.fit(x_train, y_train)
+    return CB
 
 
 
