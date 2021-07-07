@@ -2,20 +2,19 @@
 # An implementation of LightGBM in Weka, using Weka PyScript
 # For Capitol Technology University's Computer Science Lab
 
-# 6/21/2021: Incomplete, untested
+# 7/7/2021: COMPLETE, TESTED
 
 # Parameters for Weka:
     # num_leaves (default 32)
     # learning_rate (default 0.05)
     # n_estimators (default 20)
     
-# TODO: Add parameters and usage guide to readme
+#This is the code that can be utilized to run LightGBM with specefic parameters you want to provide within the Argument box within Weka
 
 import lightgbm as lgb
 from wekapyscript import ArffToArgs
 
 # Train the model
-# TODO: Test in Weka
 def train(args):
     x_train = args["X_train"]
     y_train = args["y_train"]
