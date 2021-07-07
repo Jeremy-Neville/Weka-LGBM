@@ -1,4 +1,4 @@
-#I keep the two statements that were imported in the RandomForest Classifier pyscript just in case
+#This is the prototype code that you can utilize to simply run LGBM without any parameters given by you the user
 from wekapyscript import ArffToArgs
 import lightgbm as lgb
 
