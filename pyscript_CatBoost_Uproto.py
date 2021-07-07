@@ -1,8 +1,16 @@
+# Weka CatBoost
+# An implementation of CatBoost in Weka, using Weka PyScript
+# For Capitol Technology University's Computer Science Lab
+
+# 7/7/2021: COMPLETE, TESTED
+
 # Parameters for Weka:
     # num_leaves (default 31)
     # learning_rate (default 0.03)
     # n_estimators (I utilized 1000)
-  
+    
+#This is the code that can be utilized to run CatBoost with specefic parameters you want to provide within the Argument box within Weka
+
 from wekapyscript import ArffToArgs
 import catboost
 
