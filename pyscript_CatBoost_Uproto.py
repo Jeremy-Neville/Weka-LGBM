@@ -10,9 +10,9 @@ import catboost
 def train(args):
     x_train = args["X_train"]
     y_train = args["y_train"]
-    rf = catboost.CatBoostClassifier(num_leaves = args["num_leaves"], learning_rate = args["learning_rate"], n_estimators = args["n_estimators"])
-    rf.fit(x_train, y_train)
-    return rf
+    CB = catboost.CatBoostClassifier(num_leaves = args["num_leaves"], learning_rate = args["learning_rate"], n_estimators = args["n_estimators"])
+    CB.fit(x_train, y_train)
+    return CB
 
 
 
