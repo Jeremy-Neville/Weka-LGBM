@@ -1,7 +1,7 @@
 # Weka- LGBM & CatBoost
 
 ## Introduction
-Within here you will see a documentation of my progress in implementing LGBM and CatBoost within Weka through PyScript. You will see the differences between the prototype and the finished product. You will also be given an idea as how to run the pyscripts with and without arguments within Weka.
+Within here you will see a documentation of how to implement LGBM and CatBoost within Weka through PyScript. You will see the differences between the prototype and the finished product. You will also be given an idea as how to run the pyscripts with and without arguments within Weka. Furthermore you will be able to see the results provided by the new updated ProtoType
 
 
 # Arguments/Parameters within Weka
@@ -21,7 +21,7 @@ num_leaves=32;learning_rate=0.05;n_estimators=20
 What we will now focus on is the original prototype I created for my LGBM pyscript I utilized to attain my orignal results from the prototype. It is important to note that the code for the prototype will only have a few differences compared to the finished product. 
 
 ## LGBM ProtoType Code
-The code below is the code utilized for the prototype. As you can see, the LGBMClassifier does not utilize any parameters and is instead relying upon what can be inferred to be default parameters. What we are currently unsure of is if these default parameters are good parameters or are insufficient in allowing us to acquire a good understanding of how effective LGBM is with this data set.
+The code provided below is the code utilized for the prototype. As you can see, the LGBMClassifier does not utilize any parameters and is instead relying upon what can be inferred to be default parameters. What we are currently unsure of is if these default parameters are good parameters or are insufficient in allowing us to acquire a good understanding of how effective LGBM is with this data set.
 ```
 # Weka LightGBM ProtoType
 # An implementation of LightGBM in Weka, using Weka PyScript
