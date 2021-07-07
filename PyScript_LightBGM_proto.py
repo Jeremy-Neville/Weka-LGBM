@@ -1,17 +1,17 @@
 #I keep the two statements that were imported in the RandomForest Classifier pyscript just in case
 from wekapyscript import ArffToArgs
-import lightgbm
+import lightgbm as lgb
 
 def train(args):
     x_train = args["X_train"]
     y_train = args["y_train"]
-    rf = lightgbm.LGBMClassifier()
-    rf = rf.fit(x_train, y_train)
-    return rf
+    lgbm = lgb.LGBMClassifier()
+    lgbm = lgbm.fit(x_train, y_train)
+    return lgbm
 
 
 def describe(args, model):
-    return "lighgbm is running"
+    return "LightGBM is running"
 
 
 def test(args, model):
