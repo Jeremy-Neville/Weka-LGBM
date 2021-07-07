@@ -1,3 +1,9 @@
+# Weka LightGBM
+# An implementation of LightGBM in Weka, using Weka PyScript
+# For Capitol Technology University's Computer Science Lab
+
+# 6/21/2021: COMPLETE, TESTED
+
 #This is the prototype code that you can utilize to simply run LGBM without any parameters given by you the user
 from wekapyscript import ArffToArgs
 import lightgbm as lgb
