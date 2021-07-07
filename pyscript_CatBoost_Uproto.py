@@ -14,6 +14,7 @@
 from wekapyscript import ArffToArgs
 import catboost
 
+# Train the model
 def train(args):
     x_train = args["X_train"]
     y_train = args["y_train"]
@@ -22,10 +23,13 @@ def train(args):
     return CB
 
 
-
+# Model description
+# TODO: Add args to return string
 def describe(args, model):
     return "catboost is running"
-
+    
+# Test the model
+# TODO: Test in Weka
 def test(args, model):
     X_test = args["X_test"]
     return model.predict_proba(X_test).tolist()
