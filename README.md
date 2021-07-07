@@ -14,6 +14,8 @@ EX:
 
 num_leaves=32;learning_rate=0.05;n_estimators=20
 ```
+![arguments](https://user-images.githubusercontent.com/49813790/124758556-af5a7d00-defc-11eb-89d0-b7033177cc8a.PNG)
+
 
 # LGBM ProtoType
 What we will now focus on is the original prototype I created for my LGBM pyscript I utilized to attain my orignal results from the prototype. It is important to note that the code for the prototype will only have a few differences compared to the finished product. 
@@ -360,11 +362,17 @@ For some reason before I was unable to have the three parameters within my weka 
 # The New LGBM ProtoType
 I was able to figure out the small issues that were preventing me from acquiring the results I wanted. What will be displayed below will be the results given by the code which had some alteration which will be detailed.
 
-## The Alteration Made Within The Code
-The biggest alteration I made when it comes to the code was to change the LGBMRegressor statement to an LGBM classifier statement. This alteration was made to ensure I can run it within Weka as a classifier with the default parameters.
+## The Alteration Made Within The Code, and how to apply it within your prototype code
+The biggest alteration I made when it comes to the code was to change the LGBMRegressor statement to an LGBM classifier statement. This alteration was made to ensure I can run it within Weka as a classifier with the default parameters. All you need to do within your prototype code is replace the previoud declaration of rf with the following line of code.
 ```
 rf= lightgbm.LGBMClassifier(num_leaves = args["num_leaves"], learning_rate = args["learning_rate"], n_estimators = args["n_estimators"])
 ```
+
+## Running The LightGBM PyScript within Weka
+![arguments](https://user-images.githubusercontent.com/49813790/124758556-af5a7d00-defc-11eb-89d0-b7033177cc8a.PNG)
+
+To ensure that the pyscript is ran without issue it is important that num_leaves=32, learning_rate=0.05 and n_estimators=20. These are the default parameters you should apply when first running this pyscript within weka to ensure the pyscript runs without any issues.
+
 
 ## The Results From The Alteration
 I was able to put the default parameters within Weka, which then led to the following results to be provided by this model. It becomes clear that this alteration within the code allowed the classifier to provide results that were different from when I ran the classifier without any parameters. This doesn't mean that the results will differ greatly from the ones that have provided the best results however it shows that progress is being made.
@@ -561,7 +569,7 @@ As shown below, the results below are somewhat similar to those of the LGBM prot
 Since I was able to figure out to effectively create the prototype for LGBM, I began working on updating the prototype for CatBoost. This led to me to create an updated pyscript which was able to provide me some results that would be deemed beneficial in ensuring that we can provide specific parameters that can provide us better results.
 
 ## The update within the CatBoost PyScript
-As displayed below, the only change made within the code was the additional parameters that were included within the declaration of the CatBoost Classifier. I also commented in the parameters I utilized within Weka as to what to provide a better idea as to what each parameter within the code was given when I was placing in values for each parameter within weka.
+As displayed below, the only change made within the code was the additional parameters that were included within the declaration of the CatBoost Classifier. Utiliing the CatBoost prototype code provided, the only change you need to do is replace your previous declaration of rf to the one displayed in the line of code below.
 ```
 # Parameters for Weka:
     # num_leaves (default 31)
@@ -569,52 +577,60 @@ As displayed below, the only change made within the code was the additional para
     # n_estimators (I utilized 1000)
 rf = catboost.CatBoostClassifier(num_leaves = args["num_leaves"], learning_rate = args["learning_rate"], n_estimators = args["n_estimators"])
 ```
-## The parameters I utilized within Weka
+## The parameters I utilized within Weka for CatBoost
 Within weka, I placed the following values as the arguments that would be passed when I ran my newly revised CatBoost Pyscript ProtoType. I began searching as to what values will be accepted as default parameters to be utilized when running the pyscript.
 
 ```
 num_leaves=31;learning_rate=0.03;n_estimators=1000
 ```
-## The Results From The Updated CatBoost Pyscript ProtoType
+It would be recommended to decrease the vlaue of n_estimators to around 10-20 to ensure the model is truly efficient.
+
+## Running the CatBoost Pyscript within Weka
+![CatBoost_argument](https://user-images.githubusercontent.com/49813790/124760273-9226ae00-defe-11eb-9bda-169530dfb0ae.PNG)
+
+To ensure that the updated CatBoost Pyscript works with arguments, it is important to run it within Weka. As displayed above I would recommend setting 
+num_leaves=31, learning_rate=0.03 and n_estimators=20. Shown above is how exactly you should see your pyscript before running it within Weka throuhg a 10 fold cross validation.
+
+## The Results From The Updated CatBoost Pyscript ProtoType 
 
 >=== Classifier model (full training set) ===
 
 >catboost is running
 
->Time taken to build model: 103.55 seconds
+>Time taken to build model: 5.59 seconds
 
 >=== Stratified cross-validation ===
 
 >=== Summary ===
 
->Correctly Classified Instances      125753               99.8254 %
+>Correctly Classified Instances      124203               98.5949 %
 
->Incorrectly Classified Instances       220                0.1746 %
+>Incorrectly Classified Instances      1770                1.4051 %
 
->Kappa statistic                          0.9965
+>Kappa statistic                          0.9717
 
->Mean absolute error                      0.0044
+>Mean absolute error                      0.0917
 
->Root mean squared error                  0.0371
+>Root mean squared error                  0.1283
 
->Relative absolute error                  0.8929 %
+>Relative absolute error                 18.4227 %
 
->Root relative squared error              7.4355 %
+>Root relative squared error             25.7265 %
 
 >Total Number of Instances           125973     
 
 >=== Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0.999    0.003    0.998      0.999    0.998      0.996    1.000     1.000     normal
-                 0.997    0.001    0.999      0.997    0.998      0.996    1.000     1.000     anomaly
->Weighted Avg.    0.998    0.002    0.998      0.998    0.998      0.996    1.000     1.000     
+                 0.995    0.024    0.979      0.995    0.987      0.972    0.999     0.999     normal
+                 0.976    0.005    0.994      0.976    0.985      0.972    0.999     0.999     anomaly
+    Weighted Avg.    0.986    0.015    0.986      0.986    0.986      0.972    0.999     0.999     
 
 >=== Confusion Matrix ===
 
      a     b   <-- classified as
-> 67278    65 |     a = normal
->   155 58475 |     b = anomaly
+    66980   363 |     a = normal
+    1407 57223 |     b = anomaly
 
 
 >=== Re-evaluation on test set ===
@@ -629,27 +645,27 @@ num_leaves=31;learning_rate=0.03;n_estimators=1000
 
 >=== Summary ===
 
->Correctly Classified Instances       18199               80.7266 %
+>Correctly Classified Instances       18126               80.4028 %
 
->Incorrectly Classified Instances      4345               19.2734 %
+>Incorrectly Classified Instances      4418               19.5972 %
 
->Kappa statistic                          0.6247
+>Kappa statistic                          0.6181
 
->Mean absolute error                      0.195 
+>Mean absolute error                      0.2338
 
->Root mean squared error                  0.4113
+>Root mean squared error                  0.3723
 
 >Total Number of Instances            22544     
 
 >=== Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0.971    0.316    0.699      0.971    0.813      0.661    0.966     0.967     normal
-                 0.684    0.029    0.969      0.684    0.802      0.661    0.966     0.966     anomaly
-    Weighted Avg.    0.807    0.153    0.852      0.807    0.806      0.661    0.966     0.966     
+                 0.963    0.316    0.697      0.963    0.809      0.652    0.958     0.958     normal
+                 0.684    0.037    0.961      0.684    0.799      0.652    0.958     0.949     anomaly
+    Weighted Avg.    0.804    0.157    0.847      0.804    0.803      0.652    0.958     0.953     
 
 >=== Confusion Matrix ===
 
     a    b   <-- classified as
-    9426  285 |    a = normal
-    4060 8773 |    b = anomaly
+    9351  360 |    a = normal
+     4058 8775 |    b = anomaly
