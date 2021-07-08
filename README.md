@@ -1,7 +1,9 @@
 # Weka- LGBM & CatBoost
 
 ## Introduction
-Within here you will see a documentation of how to implement LGBM and CatBoost within Weka through PyScript. You will see the differences between the prototype and the finished product. You will also be given an idea as to how to run the py scripts with and without arguments within Weka. Furthermore, you will be able to see the results provided by the new updated ProtoType
+Within here you will see a documentation of how to implement LGBM and CatBoost within Weka through PyScript. You will see the differences between the prototype and the finished product. You will also be given an idea as to how to run the py scripts with and without arguments within Weka. Furthermore, you will be able to see the results provided by the new updated ProtoType with the current Dataset I have avaliable to test these pyscripts with. 
+
+**NOTE** : The dataset you may utilize this pyscript may be very different from my current dataset so please remember the results will not alays be the same and may require you to do some experimentation on your data set prior to running the pyscript to attain results that can be deemed the best for your the data you provided to the model.
 
 
 # Arguments/Parameters within Weka
