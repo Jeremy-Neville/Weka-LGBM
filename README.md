@@ -466,3 +466,19 @@ num_leaves=31, learning_rate=0.03 and n_estimators=20. Shown above is how exactl
     a    b   <-- classified as
     9351  360 |    a = normal
      4058 8775 |    b = anomaly
+     
+     
+# BONUS: returning the parameters you gave to your model
+
+What we have established right now is the backbone of ensruing this model can be trained. However, to esnure users don't have to worry that the model their training is being trained with the correct parameters it is important to retunr such information. Currently within both the updated prototypes as we will name them, they only state either LGBM or CatBoost is running. This is something we will need to change
+
+## The revised code
+
+The only aspect you need to change is within the describe function. This is something that can be done within the two updated prototypes, and is a very small change. There is one small issue, that being that the learning_rate is only displayed as 0 however once a resolution is found regarding that small issue, that will be avaliable within this README.
+```
+def describe(args, model):
+    text = "LightGBM with %i leaves, " % args["num_leaves"]
+    text_two = "a learning rate of %i, and " % args["learning_rate"]
+    text_three= "%i estimators." % args["n_estimators"]
+    return (text+text_two+text_three)
+```
