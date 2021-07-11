@@ -474,7 +474,7 @@ What we have established right now is the backbone of ensruing this model can be
 
 ## The revised code
 
-The only aspect you need to change is within the describe function. This is something that can be done within the two updated prototypes, and is a very small change. There is one small issue, that being that the learning_rate is only displayed as 0 however once a resolution is found regarding that small issue, that will be avaliable within this README.
+The only aspect you need to change is within the describe function. This is something that can be done within the two updated prototypes, and is a very small change. There is one small issue, that being that the learning_rate is only displayed as 0 however once a resolution is found regarding that small issue, that will be avaliable within this README. This code is not something that is mandatory but is recommended to ensure you can see the parameters for these specefic pyscripts.
 ```
 def describe(args, model):
     text = "LightGBM with %i leaves, " % args["num_leaves"]
