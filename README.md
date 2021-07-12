@@ -1,9 +1,9 @@
 # Weka- LGBM & CatBoost
 
 ## Introduction
-Within here you will see a documentation of how to implement LGBM and CatBoost within Weka through PyScript. You will see the differences between the prototype and the finished product. You will also be given an idea as to how to run the py scripts with and without arguments within Weka. Furthermore, you will be able to see the results provided by the new updated ProtoType with the current Dataset I have avaliable to test these pyscripts with. 
+Within here you will see documentation of how to implement LGBM and CatBoost within Weka through PyScript. You will see the differences between the prototype and the finished product. You will also be given an idea as to how to run the py scripts with and without arguments within Weka. Furthermore, you will be able to see the results provided by the new updated ProtoType with the current Dataset I have available to test these pyscripts with. 
 
-**NOTE** : The dataset you may utilize this pyscript may be very different from my current dataset so please remember the results will not alays be the same and may require you to do some experimentation on your data set prior to running the pyscript to attain results that can be deemed the best for your the data you provided to the model.
+**NOTE** : The dataset you may utilize this pyscript may be very different from my current dataset so please remember the results will not always be the same and may require you to do some experimentation on your data set prior to running the pyscript to attain results that can be deemed the best for your the data you provided to the model.
 
 
 # Arguments/Parameters within Weka
@@ -254,7 +254,7 @@ As you can see below, the code for the CatBoost Prototype is very similar to the
 
 # 7/7/2021: COMPLETE, TESTED
 
-#This is the prototype code that can be utilized to run CatBoost within Weka witout any parameters being provided into the arguments section within Weka.
+#This is the prototype code that can be utilized to run CatBoost within Weka without any parameters being provided into the arguments section within Weka.
 from wekapyscript import ArffToArgs
 import catboost
 
@@ -470,11 +470,15 @@ num_leaves=31, learning_rate=0.03 and n_estimators=20. Shown above is how exactl
      
 # BONUS: returning the parameters you gave to your model
 
-What we have established right now is the backbone of ensruing this model can be trained. However, to esnure users don't have to worry that the model their training is being trained with the correct parameters it is important to retunr such information. Currently within both the updated prototypes as we will name them, they only state either LGBM or CatBoost is running. This is something we will need to change
+What we have established right now is the backbone of ensuring this model can be trained. However, to ensure users don't have to worry that the model their training is being trained with the correct parameters it is important to return such information. Currently, within both the updated prototypes as we will name them, they only state either LGBM or CatBoost is running. This is something we will need to change
 
 ## The revised code
 
-The only aspect you need to change is within the describe function. This is something that can be done within the two updated prototypes, and is a very small change. There is one small issue, that being that the learning_rate is only displayed as 0 however once a resolution is found regarding that small issue, that will be avaliable within this README. This code is not something that is mandatory but is recommended to ensure you can see the parameters for these specefic pyscripts.
+The only aspect you need to change is within the describe function. This is something that can be done within the two updated prototypes, and is a very small change. There is one small issue, that being that the learning_rate is only displayed as 0 however once a resolution is found regarding that small issue, that will be available within this README. This code is not something that is mandatory but is recommended to ensure you can see the parameters for these specific pyscripts.
+
+## The code implemented in Updated LGBM Prototype
+To ensure the code is understandable, and to pinpoint a small difference. These two sections are added to ensure no user is confused by what small aspect of the text is changed within the code of the two describe functions displayed. The following code is the code that should be implemented within your updated LGBM Prototype.
+
 ```
 def describe(args, model):
     text = "LightGBM with %i leaves, " % args["num_leaves"]
@@ -482,3 +486,13 @@ def describe(args, model):
     text_three= "%i estimators." % args["n_estimators"]
     return (text+text_two+text_three)
 ```
+
+## The code implemented in Updated CatBoost Prototype
+The code displayed before is the code that should be implemented into the Updated CatBoost Prototype. Remember that this code is optional however we are making this distinction to ensure no user copies the previous code into their updated CatBoost prototype or other pyscripts that rely upon arguments without noticing the small distinction found within the text variable.
+
+    # This is optional code, however, it is good to provide this within this file to ensure all users can understand the template for displaying multiple parameters.
+    
+    #text = "CatBoost with %i leaves, " % args["num_leaves"]
+    #text_two = "a learning rate of %i, and " % args["learning_rate"]
+    #text_three= "%i estimators." % args["n_estimators"]
+    #return (text+text_two+text_three)
