@@ -9,7 +9,7 @@ This is done to ensure that any users that want to implement LGBM or CatBoost wi
 
 # How to install CatBoost and LGBM
 
-Before we go into detail regarding the prototypes and updated prototypes, It is important to ensure that LightGBM, and CatBoost are installed onto your python. To ensure that, we need to ensure our Python has [pip](https://phoenixnap.com/kb/install-pip-windows) installed. After ensuring that PIP is installed, we will then need to install LightGBM, and CatBoost.
+Before we go into detail regarding the prototypes and updated prototypes, It is important to ensure that LightGBM, and CatBoost are installed onto your python. To ensure that, we need to ensure our Python has [PIP](https://phoenixnap.com/kb/install-pip-windows) installed. After ensuring that [PIP](https://phoenixnap.com/kb/install-pip-windows) is installed, we will then need to install LightGBM, and CatBoost.
 
 **NOTE** : installing pip on your device is very different if you are using Linux. Provided here is a link regarding installing software on your Linux device through the [Command Line](https://opensource.com/article/18/8/how-install-software-linux-command-line) 
 
