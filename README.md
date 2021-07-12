@@ -1,11 +1,52 @@
-# Weka- LGBM & CatBoost
+# Weka - LGBM & CatBoost PyScript
 
 ## Introduction
 Within here you will see documentation of how to implement LGBM and CatBoost within Weka through PyScript. You will see the differences between the prototype and the finished product. You will also be given an idea as to how to run the py scripts with and without arguments within Weka. Furthermore, you will be able to see the results provided by the new updated ProtoType with the current Dataset I have available to test these pyscripts with. 
 
-**NOTE** : The dataset you may utilize this pyscript may be very different from my current dataset so please remember the results will not always be the same and may require you to do some experimentation on your data set prior to running the pyscript to attain results that can be deemed the best for your the data you provided to the model.
+This is done to ensure that any users that want to implement LGBM or CatBoost within Weka can do so with a PyScript either with or without specific parameters. Overall this is made to ensure that there is documentation regarding the implementation of LGBM and CatBoost in Weka
+
+**NOTE** : The dataset you may utilize this pyscript may be very different from my current dataset so please remember the results will not always be the same and may require you to do some experimentation on your data set prior to running the pyscript to attain results that can be deemed the best for the data you provided to the model.
+
+# How to install CatBoost and LGBM
+
+Before we go into detail regarding the prototypes and updated prototypes, It is important to ensure that LightGBM, and CatBoost are installed onto your python. To ensure that, we need to ensure our Python has [pip](https://phoenixnap.com/kb/install-pip-windows) installed. After ensuring that PIP is installed, we will then need to install LightGBM, and CatBoost.
+
+**NOTE** : installing pip on your device is very different if you are using Linux. Provided here is a link regarding installing software on your Linux device through the [Command Line](https://opensource.com/article/18/8/how-install-software-linux-command-line) 
+
+## Opening / Finding Command Prompt
+
+Before we go deeper into the installation of LGBM and CatBoost, it is important to provide information regarding opening command prompt on your computer. Provided below are links regarding opening your command prompt/terminal on your device.
+
+[MAC](https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac)
+
+[WINDOWS](https://www.ionos.com/digitalguide/server/tools/open-command-prompt/)
+
+[LINUX](https://ubuntu.com/tutorials/command-line-for-beginners#3-opening-a-terminal)
 
 
+
+## Installing LGBM(LightGBM)
+
+When it comes to installing LGBM, all you need to do is run the pip command displayed below in your command prompt.
+
+```
+pip install lightgbm
+```
+
+However, it is possible that one does not have wheel installed which could hinder the installation process, so it is important to install wheel as well just to ensure you can install lightgbm without any issues. To download wheel, all you need to do is run the pip command displayed below in the command prompt.
+
+```
+pip install wheel
+```
+
+## Installing CatBoost
+
+Once you have installed LGBM, all that's needed is to download CatBoost to ensure that your pyscript can run without any issues. To download CatBoost, all that's needed to be done is to run the pip command displayed below in the command prompt.
+
+```
+pip install catboost
+```
+ 
 # Arguments/Parameters within Weka
 To ensure the py script with parameters works, you need to ensure that within Weka and where it says arguments you include the parameters with the specific values you desire. This will be reiterated within each prototype and final version of the PyScript for CatBoost and LGBM.
 
