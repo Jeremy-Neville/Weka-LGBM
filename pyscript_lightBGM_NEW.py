@@ -26,7 +26,7 @@ def train(args):
 # TODO: Add args to return string
 def describe(args, model):
     
-    return "LightGBM"
+    return "LightGBM is running"
 
 
     # As displayed within the readme, there is a way to display the parameters inputted by the user. This is the way I was able to to display all three parameters without any issues
