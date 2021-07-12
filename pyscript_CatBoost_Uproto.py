@@ -26,7 +26,16 @@ def train(args):
 # Model description
 # TODO: Add args to return string
 def describe(args, model):
-    return "catboost is running"
+    return "CatBoost is running"
+
+
+    # As displayed within the readme, there is a way to display the parameters inputted by the user. This is the way I was able to to display all three parameters without any issues
+    # This is optional code, however it is good to provide this within this file to ensure all users can understand the template for displaying multiple parameters.
+    
+    #text = "CatBoost with %i leaves, " % args["num_leaves"]
+    #text_two = "a learning rate of %i, and " % args["learning_rate"]
+    #text_three= "%i estimators." % args["n_estimators"]
+    #return (text+text_two+text_three)
     
 # Test the model
 # TODO: Test in Weka
