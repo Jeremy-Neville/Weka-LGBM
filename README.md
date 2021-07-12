@@ -9,6 +9,10 @@ This is done to ensure that any users that want to implement LGBM or CatBoost wi
 
 # Installing PyScript in Weka
 
+It is extremely important to ensure that WekaPyScript is installed on your Weka. if it isn't installed prior to running your model, there will be various issues that will arrise. So to ensure there are no issues, the steps needed to install PyScript in Weka will be provided below.
+
+## The steps needed to install PyScript in Weka
+
 To ensure that there are no issues with running the PyScripts within Weka, it is important to install WekaPyScript first. To do this it is important to do the following
 
 **1. *Open Weka*** 
