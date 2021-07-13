@@ -1,0 +1,172 @@
+=== Classifier model (full training set) ===
+
+catboost is running
+
+Time taken to build model: 59.18 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances      125766               99.8357 %
+Incorrectly Classified Instances       207                0.1643 %
+Kappa statistic                          0.9967
+Mean absolute error                      0.0042
+Root mean squared error                  0.0362
+Relative absolute error                  0.8471 %
+Root relative squared error              7.2488 %
+Total Number of Instances           125973     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.999    0.003    0.998      0.999    0.998      0.997    1.000     1.000     normal
+                 0.997    0.001    0.999      0.997    0.998      0.997    1.000     1.000     anomaly
+Weighted Avg.    0.998    0.002    0.998      0.998    0.998      0.997    1.000     1.000     
+
+=== Confusion Matrix ===
+
+     a     b   <-- classified as
+ 67284    59 |     a = normal
+   148 58482 |     b = anomaly
+
+
+
+
+
+
+
+
+
+
+=== Re-evaluation on test set ===
+
+User supplied test set
+Relation:     KDDTest
+Instances:     unknown (yet). Reading incrementally
+Attributes:   42
+
+=== Summary ===
+
+Correctly Classified Instances       17965               79.6886 %
+Incorrectly Classified Instances      4579               20.3114 %
+Kappa statistic                          0.6056
+Mean absolute error                      0.1991
+Root mean squared error                  0.4163
+Total Number of Instances            22544     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.971    0.335    0.687      0.971    0.805      0.645    0.970     0.971     normal
+                 0.665    0.029    0.968      0.665    0.789      0.645    0.970     0.967     anomaly
+Weighted Avg.    0.797    0.161    0.847      0.797    0.795      0.645    0.970     0.969     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 9426  285 |    a = normal
+ 4294 8539 |    b = anomaly
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=== Classifier model (full training set) ===
+
+catboost is running
+
+Time taken to build model: 211.83 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances      125766               99.8357 %
+Incorrectly Classified Instances       207                0.1643 %
+Kappa statistic                          0.9967
+Mean absolute error                      0.0042
+Root mean squared error                  0.0362
+Relative absolute error                  0.8471 %
+Root relative squared error              7.2488 %
+Total Number of Instances           125973     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.999    0.003    0.998      0.999    0.998      0.997    1.000     1.000     normal
+                 0.997    0.001    0.999      0.997    0.998      0.997    1.000     1.000     anomaly
+Weighted Avg.    0.998    0.002    0.998      0.998    0.998      0.997    1.000     1.000     
+
+=== Confusion Matrix ===
+
+     a     b   <-- classified as
+ 67284    59 |     a = normal
+   148 58482 |     b = anomaly
+
+
+=== Re-evaluation on test set ===
+
+User supplied test set
+Relation:     KDDTest
+Instances:     unknown (yet). Reading incrementally
+Attributes:   42
+
+=== Summary ===
+
+Correctly Classified Instances       17965               79.6886 %
+Incorrectly Classified Instances      4579               20.3114 %
+Kappa statistic                          0.6056
+Mean absolute error                      0.1991
+Root mean squared error                  0.4163
+Total Number of Instances            22544     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.971    0.335    0.687      0.971    0.805      0.645    0.970     0.971     normal
+                 0.665    0.029    0.968      0.665    0.789      0.645    0.970     0.967     anomaly
+Weighted Avg.    0.797    0.161    0.847      0.797    0.795      0.645    0.970     0.969     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 9426  285 |    a = normal
+ 4294 8539 |    b = anomaly
+
+
+
+
+
