@@ -1,11 +1,15 @@
 # This is a comment.
 # Each line is a file pattern followed by one or more owners.
 
+# These owners will be the default owners for everything in the repo.
+*       @DebuggingaHopper
+
+
 # In this file, WhalePlane and DebuggingaHopper own any files in the src 
 # directory at the root of the repository and any of its
 # subdirectories.
-/src/ @DebuggingaHopper
-/src/ @Whaleplane
+src/* @DebuggingaHopper
+src/* @Whaleplane
 
 
 # In this line, DebuggingaHopper owns any files in the Results 
