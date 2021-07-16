@@ -5,11 +5,11 @@
 # In this file, WhalePlane and DebuggingaHopper own any files in the src 
 # directory at the root of the repository and any of its
 # subdirectories.
-src/ @DebuggingaHopper
-src/ @Whaleplane
+/src/ @DebuggingaHopper
+/src/ @Whaleplane
 
 
 # In this line, DebuggingaHopper owns any files in the Results 
 # directory at the root of the repository and any of its
 # subdirectories.
-Results/ @DebuggingaHopper
+/Results/ @DebuggingaHopper
