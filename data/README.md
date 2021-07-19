@@ -25,15 +25,18 @@ After you clicked open, you will now be given this screen in the preprocess tab.
 ## How to open and set the testing data
 
 ![setting](https://user-images.githubusercontent.com/49813790/126166555-c0347d90-f1de-456b-9d82-630412e2817f.PNG)
+![image](https://user-images.githubusercontent.com/49813790/126168697-e0f3c689-c6d6-44d5-b68b-8b64b6d9cdc7.png)
 
-To be able to set the testing data you must first run a classification with the training data. Once you have finished running the model and are givien the results, first go to  supplied test set and click set. It will open a prompt similar to the prompt given when setting the training data.
+To be able to set the testing data you must first run a classification with the training data. Once you have finished running the model and are givien the results, first go to  supplied test set and click set. It will open a prompt similar to the prompt given when setting the training data however before that you will be given a prompt that has two buttons saying open file or open url. I recommend always selecting open file to make sure you can locate the correct testing file you want to provide.
 
 ![settingtesting](https://user-images.githubusercontent.com/49813790/126167387-3c57a864-cf3d-4897-8ede-eb8c21a49757.PNG)
 Just like before, you will need to navigate to find where you placed your testing data file. Once you have located it you just select it and then select open.
 
 ![finalsetting](https://user-images.githubusercontent.com/49813790/126168020-24104024-477c-4449-bf63-87b3fd50396f.PNG)
-Even after you set the testing data you will not see any difference with the window unlike when you selected your training data.
+![image](https://user-images.githubusercontent.com/49813790/126169123-7cdf5bfa-41cf-4643-be7c-94e5d550c324.png)
 
+Even after you set the testing data you will not see any difference with the window unlike when you selected your training data. However if you click on set again, you will see the data set that it is considering as the selected testing set which instead of none is now replaced with KDDTest
 
- As shown before, the process to set your testing and training data is not too difficult however it is documented just to ensure the testing data isn't provided prior to the training data.
+## Conclusion
+ As shown before, the process to set your testing and training data is not too difficult however it is documented just to ensure the testing data isn't provided prior to the training data. As shown throughout this README, the data provided within the data folder is data you can utilize to test your LGBM and CatBoost pyscripts.
 
