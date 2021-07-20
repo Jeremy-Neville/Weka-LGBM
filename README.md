@@ -550,8 +550,10 @@ def describe(args, model):
 The code displayed before is the code that should be implemented into the Updated CatBoost Prototype. Remember that this code is optional however we are making this distinction to ensure no user copies the previous code into their updated CatBoost prototype or other pyscripts that rely upon arguments without noticing the small distinction found within the text variable.
 
     # This is optional code, however, it is good to provide this within this file to ensure all users can understand the template for displaying multiple parameters.
+    def describe(args, model):
+        text = "CatBoost with %i leaves, " % args["num_leaves"]
+        text_two = "a learning rate of %i, and " % args["learning_rate"]
+        text_three= "%i estimators." % args["n_estimators"]
+        return (text+text_two+text_three)
     
-    #text = "CatBoost with %i leaves, " % args["num_leaves"]
-    #text_two = "a learning rate of %i, and " % args["learning_rate"]
-    #text_three= "%i estimators." % args["n_estimators"]
-    #return (text+text_two+text_three)
+    
