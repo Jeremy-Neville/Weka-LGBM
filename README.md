@@ -5,7 +5,7 @@ Within here you will see documentation of how to implement LGBM and CatBoost wit
 
 This is done to ensure that any users that want to implement LGBM or CatBoost within Weka can do so with a PyScript either with or without specific parameters. Overall this is made to ensure that there is documentation regarding the implementation of LGBM and CatBoost in Weka
 
-**NOTE** : The dataset you may utilize this pyscript may be very different from my current dataset so please remember the results will not always be the same and may require you to do some experimentation on your data set prior to running the pyscript to attain results that can be deemed the best for the data you provided to the model.
+**NOTE** : The dataset you may utilize this pyscript may be very different from my current dataset so please remember the results will not always be the same and may require you to do some experimentation on your data set prior to running the pyscript to attain results that can be deemed the best for the data you provided to the model. The dataset utilized can be found within this repository in the doc folder, so if you want to utilize the dataset utilized in this README, it is provided to all of those interested in using it to test the LGBM and CatBoost pyscripts.
 
 # Installing PyScript in Weka
 
