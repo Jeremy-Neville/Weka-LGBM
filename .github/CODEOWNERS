@@ -6,16 +6,16 @@
 *           @DebuggingaHopper
 
 #DebuggingaHopper owns any files in the data directory
-/data/* @DebuggingaHopper @Whaleplane
+/data/ @DebuggingaHopper @Whaleplane
 
 
 # In this line, DebuggingaHopper owns any files in the Results 
 # directory at the root of the repository and any of its
 # subdirectories.
-/Results/* @DebuggingaHopper
+/Results/ @DebuggingaHopper
 
 
 # In this file, WhalePlane and DebuggingaHopper own any files in the src 
 # directory at the root of the repository and any of its
 # subdirectories.
-/src/* @DebuggingaHopper @Whaleplane
+/src/ @DebuggingaHopper @Whaleplane
