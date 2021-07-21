@@ -1,6 +1,8 @@
 # This is a comment.
 # Each line is a file pattern followed by one or more owners.
 
+# Global rule:
+*           @DebuggingaHoppwe
 
 #DebuggingaHopper owns any files in the data directory
 /data/ @DebuggingaHopper
