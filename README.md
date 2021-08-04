@@ -557,13 +557,13 @@ The code displayed before is the code that should be implemented into the Update
         return (text+text_two+text_three)
   
   
-# BONUS #2: Multithreading
+# BONUS #2: Multi-Threading
 
-Even though the model is able to be built without any difficulties with the current PyScript, it is always important to also take into account the amount of time it takes to build the model. This is not mandatory but it is important to document when it comes to how to effectively implement multi threading into each respective pyscript since each one requires a different variable.
+Even though the model is able to be built without any difficulties with the current PyScript, it is always important to also take into account the amount of time it takes to build the model. This is not mandatory but it is important to document when it comes to how to effectively implement multi-threading into each respective py script since each one requires a different variable.
 
 ## The revised code
 
-The only aspect you need to change is within the declaraion of lgbm & CB  This is something that can be done within the two updated prototypes, and is a very miniscule change. The only difference between these two versions are the vraibale names which have the same default value of -1 but have different names in each respective pyscript. Overall the revised code does not alter anything greatly but is important depending on if the user desires their model to be built quickly.
+The only aspect you need to change is within the declaration of lgbm & CB  This is something that can be done within the two updated prototypes, and is a very minuscule change. The only difference between these two versions is the variable names which have the same default value of -1 but have different names in each respective pyscript. Overall the revised code does not alter anything greatly but is important depending on if the user desires their model to be built quickly.
 
 ## The code implemented in Updated LGBM Prototype
 
