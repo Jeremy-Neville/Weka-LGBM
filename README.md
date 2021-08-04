@@ -527,7 +527,7 @@ num_leaves=31, learning_rate=0.03 and n_estimators=20. Shown above is how exactl
      4058 8775 |    b = anomaly
      
      
-# BONUS: returning the parameters you gave to your model
+# BONUS #1: returning the parameters you gave to your model
 
 What we have established right now is the backbone of ensuring this model can be trained. However, to ensure users don't have to worry that the model their training is being trained with the correct parameters it is important to return such information. Currently, within both the updated prototypes as we will name them, they only state either LGBM or CatBoost is running. This is something we will need to change
 
@@ -555,5 +555,28 @@ The code displayed before is the code that should be implemented into the Update
         text_two = "a learning rate of %i, and " % args["learning_rate"]
         text_three= "%i estimators." % args["n_estimators"]
         return (text+text_two+text_three)
-    
-    
+  
+  
+# BONUS #2: Multithreading
+
+Even though the model is able to be built without any difficulties with the current PyScript, it is always important to also take into account the amount of time it takes to build the model. This is not mandatory but it is important to document when it comes to how to effectively implement multi threading into each respective pyscript since each one requires a different variable.
+
+## The revised code
+
+The only aspect you need to change is within the declaraion of lgbm & CB  This is something that can be done within the two updated prototypes, and is a very miniscule change. The only difference between these two versions are the vraibale names which have the same default value of -1 but have different names in each respective pyscript. Overall the revised code does not alter anything greatly but is important depending on if the user desires their model to be built quickly.
+
+## The code implemented in Updated LGBM Prototype
+
+To ensure the code is understandable, and to pinpoint a small difference. These two sections are added to ensure no user is confused by what small aspect of the text is changed within the code of the two describe functions displayed. The following code is the code that should be implemented within your updated LGBM Prototype.
+
+```
+ lgbm = lgb.LGBMClassifier(num_leaves=args["num_leaves"], learning_rate=args["learning_rate"], n_estimators=args["n_estimators"], n_jobs=args["n_jobs"])
+```
+
+
+## The code implemented in Updated CatBoost Prototype
+The code displayed before is the code that should be implemented into the Updated CatBoost Prototype. Remember that this code is optional however we are making this distinction to ensure no user copies the previous code into their updated CatBoost prototype or other pyscripts to ensure no errors occur when running the PyScript on Weka.
+
+```
+ CB = catboost.CatBoostClassifier(num_leaves = args["num_leaves"], learning_rate = args["learning_rate"], n_estimators = args["n_estimators"], thread_count= args["thread_count"])
+```
