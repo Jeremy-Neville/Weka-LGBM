@@ -629,9 +629,8 @@ CB = catboost.CatBoostClassifier(num_leaves = args["num_leaves"], learning_rate 
 ## How these arguments should look in WEKA
 When it comes to applying this script onto WEKA, it is important to always display how the arguments should look on your enviornment. As displayed below, the two new arguments should be given their values as dsiplayed. If you have different platforms or GPUs you want to utilize, you can modify the parameters, that is the whole reason why we wanted to implement GPU support into your pyscript.
 
-![CATBOOST_GPU_dev0](https://user-images.githubusercontent.com/49813790/137154287-82deb81f-114a-49a2-8076-c7b712a1ed4e.png)
 
-![CATBOOST_GPU_DEV0:1](https://user-images.githubusercontent.com/49813790/137154983-35f61e33-f31c-40d0-9db9-00de9adc4cce.png)
+
 
 
 
