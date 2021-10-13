@@ -580,3 +580,27 @@ The code displayed before is the code that should be implemented into the Update
 ```
  CB = catboost.CatBoostClassifier(num_leaves = args["num_leaves"], learning_rate = args["learning_rate"], n_estimators = args["n_estimators"], thread_count= args["thread_count"])
 ```
+
+
+# Bonus #3: LightGBM GPU Support
+
+If you are reading this specefic part of this documentation, then it means you are interested in implementing GPU support into your LightGBM pyscript. Luckily, there is an efficient way to implement it and it isn't tedious. It is importanrt to always check if the classifier we are utilizing provides GPU support.  In this section, we will delve into how we can implement GPU support into our PyScript for LightGBM
+
+## The Revised Code
+When it comes the revisions made onto our PyScript, it is important to higlight the three new arguments that would be included, them being **device** , **gpu_platform_id** , and finally **gpu_device_id**. These three arguments are crucial in ensuring that the PyScript has an argument known as device that states we are utilizing the GPU however if we only place that as our only argument, the default platform and GPU which is the is the first plaform and GPU installed would be selected as the one that will run the classifier. To ensure that does not happen we utilize the arguments gpu_platform_id and gpu_device_id to allow the user to set what GPU or platform they want to utilize to run through those two arguments. Now that we explained the parameters we will display in the revised code, we will now delve into the revised code itself.
+
+## The code implemented onto the LightGBM Pyscript
+To ensure that the code is understandable, it's important to point out that the only revision that would have to be made onto the pyscript is just in the declaration of lgbm in our code.
+
+```
+lgbm = lgb.LGBMClassifier(num_leaves=args["num_leaves"], learning_rate=args["learning_rate"], n_estimators=args["n_estimators"], n_jobs=args["n_jobs"], device=args["device"], gpu_platform_id=args["gpu_platform_id"], gpu_device_id=args["gpu_device_id"])
+```
+
+## How these arguments should look in WEKA
+When it comes to applying this script onto WEKA, it is important to always display how the arguments should look on your enviornment. As displayed below, the three new arguments should be given their values as dsiplayed. If you have different platforms or GPUs you want to utilize, you can modify the parameters, that is the whole reason why we wanted to implement GPU support into your pyscript.
+
+![LightGBM_GPU_Support](https://user-images.githubusercontent.com/49813790/137139156-75494abd-0fb2-4a92-add6-50a017eae03c.png)
+
+
+
+
