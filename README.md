@@ -582,7 +582,7 @@ The code displayed before is the code that should be implemented into the Update
 ```
 
 
-# Bonus #3: LightGBM GPU Support
+# BONUS #3: LightGBM GPU Support
 
 If you are reading this specefic part of this documentation, then it means you are interested in implementing GPU support into your LightGBM pyscript. Luckily, there is an efficient way to implement it and it isn't tedious. It is importanrt to always check if the classifier we are utilizing provides GPU support.  In this section, we will delve into how we can implement GPU support into our PyScript for LightGBM
 
