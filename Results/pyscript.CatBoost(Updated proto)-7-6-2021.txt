@@ -1,0 +1,60 @@
+=== Classifier model (full training set) ===
+
+catboost is running
+
+Time taken to build model: 103.55 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances      125753               99.8254 %
+Incorrectly Classified Instances       220                0.1746 %
+Kappa statistic                          0.9965
+Mean absolute error                      0.0044
+Root mean squared error                  0.0371
+Relative absolute error                  0.8929 %
+Root relative squared error              7.4355 %
+Total Number of Instances           125973     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.999    0.003    0.998      0.999    0.998      0.996    1.000     1.000     normal
+                 0.997    0.001    0.999      0.997    0.998      0.996    1.000     1.000     anomaly
+Weighted Avg.    0.998    0.002    0.998      0.998    0.998      0.996    1.000     1.000     
+
+=== Confusion Matrix ===
+
+     a     b   <-- classified as
+ 67278    65 |     a = normal
+   155 58475 |     b = anomaly
+
+
+=== Re-evaluation on test set ===
+
+User supplied test set
+Relation:     KDDTest
+Instances:     unknown (yet). Reading incrementally
+Attributes:   42
+
+=== Summary ===
+
+Correctly Classified Instances       18199               80.7266 %
+Incorrectly Classified Instances      4345               19.2734 %
+Kappa statistic                          0.6247
+Mean absolute error                      0.195 
+Root mean squared error                  0.4113
+Total Number of Instances            22544     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.971    0.316    0.699      0.971    0.813      0.661    0.966     0.967     normal
+                 0.684    0.029    0.969      0.684    0.802      0.661    0.966     0.966     anomaly
+Weighted Avg.    0.807    0.153    0.852      0.807    0.806      0.661    0.966     0.966     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 9426  285 |    a = normal
+ 4060 8773 |    b = anomaly
